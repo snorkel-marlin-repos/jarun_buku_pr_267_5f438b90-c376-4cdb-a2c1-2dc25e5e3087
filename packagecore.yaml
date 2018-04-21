@@ -1,0 +1,77 @@
+name: buku
+maintainer: Arun Prakash Jana <engineerarun@gmail.com>
+license: GPLv3
+summary: Command-line bookmark manager with browser integration.
+homepage: https://github.com/jarun/Buku
+commands:
+  install:
+    - make PREFIX="/usr" install DESTDIR="${BP_DESTDIR}"
+packages:
+  archlinux:
+    builddeps:
+      - make
+    deps:
+      - python-urllib3
+      - python-cryptography
+      - python-beautifulsoup4
+      - python
+# centos no beautifulsoup4
+  centos7.3:
+    builddeps:
+      - make
+    deps:
+#     - python-beautifulsoup4
+      - python-cryptography
+      - python-urllib3
+      - python
+    commands:
+      pre:
+        - yum install epel-release
+  debian9:
+    builddeps:
+      - make
+    deps:
+      - python3-urllib3
+      - python3-cryptography
+      - python3-bs4
+      - python3
+  fedora26:
+    builddeps:
+      - make
+    deps:
+      - python3-beautifulsoup4
+      - python3-cryptography
+      - python3-urllib3
+      - python3
+  fedora27:
+    builddeps:
+      - make
+    deps:
+      - python3-beautifulsoup4
+      - python3-cryptography
+      - python3-urllib3
+      - python3
+  opensuse42.3:
+    builddeps:
+      - make
+    deps:
+      - python3-beautifulsoup4
+      - python3-cryptography
+      - python3-urllib3
+      - python3
+  ubuntu16.04:
+    builddeps:
+      - make
+    deps:
+      - python3-urllib3
+      - python3-cryptography
+      - python3-bs4
+      - python3
+  ubuntu17.10:
+    builddeps:
+      - make
+    deps:
+      - python3-urllib3
+      - python3-cryptography
+      - python3-bs4
+      - python3
